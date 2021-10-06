@@ -11,6 +11,10 @@
 
     <color name="black_shade_1">#222831</color>
     <color name="black_shade_2">#393E46</color>
+    <!-- 10% translucent -->
+    <color name="translucent_black_shade_1">#E6222831</color>
+    <color name="translucent_black_shade_2">#E6393E46</color>
+
     <color name="teal_shade">#00ADB5</color>
     <color name="grey_shade">#EEEEEE</color>
 </resources>
