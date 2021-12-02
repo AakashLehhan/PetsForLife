@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PetsForLife">
         <activity
+            android:name=".UserActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".AdminActivity"
+            android:exported="true" />
+        <activity
             android:name=".ForgotPasswordActivity"
             android:exported="true" />
         <activity
@@ -20,16 +26,16 @@
             android:exported="true" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true">
+            android:exported="true"/>
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".SplashActivity"
-            android:exported="true" />
     </application>
 
 </manifest>

@@ -69,7 +69,11 @@
                     android:layout_marginEnd="50dp"
                     android:layout_marginBottom="20dp"
                     android:hint="Full Name"
-                    android:background="@drawable/rounded_edit_text_field"/>
+                    android:inputType="text"
+                    android:background="@drawable/rounded_edit_text_field"
+                    android:maxLines="1"
+                    android:lines="1"
+                    android:singleLine="true"/>
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -77,7 +81,11 @@
                     android:layout_marginStart="50dp"
                     android:layout_marginEnd="50dp"
                     android:hint="Username"
-                    android:background="@drawable/rounded_edit_text_field"/>
+                    android:inputType="text"
+                    android:background="@drawable/rounded_edit_text_field"
+                    android:maxLines="1"
+                    android:lines="1"
+                    android:singleLine="true"/>
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -85,7 +93,11 @@
                     android:layout_marginStart="50dp"
                     android:layout_marginEnd="50dp"
                     android:hint="E-Mail"
-                    android:background="@drawable/rounded_edit_text_field"/>
+                    android:inputType="text"
+                    android:background="@drawable/rounded_edit_text_field"
+                    android:maxLines="1"
+                    android:lines="1"
+                    android:singleLine="true"/>
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -93,7 +105,11 @@
                     android:layout_marginStart="50dp"
                     android:layout_marginEnd="50dp"
                     android:hint="Phone Number"
-                    android:background="@drawable/rounded_edit_text_field"/>
+                    android:inputType="number"
+                    android:background="@drawable/rounded_edit_text_field"
+                    android:maxLines="1"
+                    android:lines="1"
+                    android:singleLine="true"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -112,14 +128,22 @@
                     android:layout_marginStart="50dp"
                     android:layout_marginEnd="50dp"
                     android:hint="Password"
-                    android:background="@drawable/rounded_edit_text_field"/>
+                    android:inputType="textPassword"
+                    android:background="@drawable/rounded_edit_text_field"
+                    android:maxLines="1"
+                    android:lines="1"
+                    android:singleLine="true"/>
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginStart="50dp"
                     android:layout_marginEnd="50dp"
                     android:hint="Re-enter Password"
-                    android:background="@drawable/rounded_edit_text_field"/>
+                    android:inputType="textPassword"
+                    android:background="@drawable/rounded_edit_text_field"
+                    android:maxLines="1"
+                    android:lines="1"
+                    android:singleLine="true"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
