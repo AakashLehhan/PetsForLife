@@ -29,8 +29,7 @@ public class DBHelperClass extends SQLiteOpenHelper {
             db.execSQL("CREATE TABLE administrators(name VARCHAR(255), username VARCHAR(255), pin INTEGER(4), password VARCHAR(255))");
 
             //Create Default Admin
-            Add add = new Add("Master", "master", 1234, "Master@123");
-            createAdmin(add);
+            setDefaults(db);
 
         } catch (Exception exception) {
             Toast.makeText(context, "Caught Exception:\n" + exception, Toast.LENGTH_SHORT).show();
@@ -45,6 +44,17 @@ public class DBHelperClass extends SQLiteOpenHelper {
         } catch (Exception exception) {
             Toast.makeText(context, "Caught Exception:\n" + exception, Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public void setDefaults(SQLiteDatabase db) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", "Master");
+        contentValues.put("username", "master");
+        contentValues.put("pin", "1234");
+        contentValues.put("password", "Master@123");
+
+        db.insert("administrators", null, contentValues);
+        Toast.makeText(context, "Master Created", Toast.LENGTH_SHORT).show();
     }
 
     public void createAdmin(Add add){
@@ -63,17 +73,16 @@ public class DBHelperClass extends SQLiteOpenHelper {
     public boolean matchAdmin(String username, String password){
         boolean exists = false;
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT username, password FROM administrators WHERE username = '" + username + "'", null);
-
-        Toast.makeText(context, "Matching", Toast.LENGTH_SHORT).show();
+        String[] selectionArgs = {username};
+        Cursor cursor = db.rawQuery("SELECT password FROM administrators WHERE username = ?", selectionArgs);
 
         if(cursor.moveToFirst()){
             do {
-                Toast.makeText(context, "Username and password are:\n" + cursor.getString(0) + " " + cursor.getString(3), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Username and password are:\n" + cursor.getString(0) + " ", Toast.LENGTH_SHORT).show();
+                if(password.equals(cursor.getString(0))){
+                    exists = true;
+                }
             } while (cursor.moveToNext());
-            //if(password.equals(cursor.getString(3))){
-            //    exists = true;
-            //}
         }
         cursor.close();
         db.close();
@@ -92,6 +101,8 @@ public class DBHelperClass extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
 
+        cursor.close();
+        db.close();
         return list;
     }
 }
