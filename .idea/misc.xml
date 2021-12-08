@@ -17,7 +17,16 @@
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_user.xml" value="0.21354166666666666" />
+        <entry key="app/src/main/res/layout/activity_user_home.xml" value="0.21354166666666666" />
+        <entry key="app/src/main/res/layout/admin_tab_switcher.xml" value="0.21354166666666666" />
         <entry key="app/src/main/res/layout/custom_alert_dialogue_one.xml" value="0.21354166666666666" />
+        <entry key="app/src/main/res/layout/fragment_admin_dashboard.xml" value="0.21354166666666666" />
+        <entry key="app/src/main/res/layout/fragment_logout.xml" value="0.1984375" />
+        <entry key="app/src/main/res/layout/fragment_tracker.xml" value="0.21354166666666666" />
+        <entry key="app/src/main/res/layout/fragment_user_owns.xml" value="0.1984375" />
+        <entry key="app/src/main/res/layout/fragment_user_profile.xml" value="0.21354166666666666" />
+        <entry key="app/src/main/res/layout/global_title_bar.xml" value="0.21354166666666666" />
+        <entry key="app/src/main/res/menu/admin_tab_layout.xml" value="0.21354166666666666" />
       </map>
     </option>
   </component>
