@@ -1,5 +1,7 @@
 package com.aakash.petsforlife;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -33,6 +35,11 @@ public class FragmentLogout extends Fragment {
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences sharedPreferences = getActivity().getSharedPreferences("GLOBAL_SHARED_PREFERENCES", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("SAVED_USERNAME", null);
+                editor.putString("SAVED_PASSWORD", null);
+                editor.apply();
                 getActivity().finish();
             }
         });

@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".SignupActivity"
     android:orientation="vertical"
-    android:background="@color/black_shade_1">
+    android:background="@color/black_shade_1"
+    android:id="@+id/parentLayout">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -79,7 +80,6 @@
                     android:id="@+id/username"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginBottom="20dp"
                     android:layout_marginStart="50dp"
                     android:layout_marginEnd="50dp"
                     android:hint="Username"
@@ -88,6 +88,16 @@
                     android:maxLines="1"
                     android:lines="1"
                     android:singleLine="true"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginEnd="50dp"
+                    android:text="* username must be unique"
+                    android:textSize="12dp"
+                    android:textColor="@color/teal_shade"/>
                 <EditText
                     android:id="@+id/email"
                     android:layout_width="match_parent"
@@ -96,7 +106,7 @@
                     android:layout_marginStart="50dp"
                     android:layout_marginEnd="50dp"
                     android:hint="E-Mail"
-                    android:inputType="text"
+                    android:inputType="textEmailAddress"
                     android:background="@drawable/rounded_edit_text_field"
                     android:maxLines="1"
                     android:lines="1"
@@ -105,7 +115,6 @@
                     android:id="@+id/contact"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginBottom="20dp"
                     android:layout_marginStart="50dp"
                     android:layout_marginEnd="50dp"
                     android:hint="Phone Number"
@@ -114,6 +123,16 @@
                     android:maxLines="1"
                     android:lines="1"
                     android:singleLine="true"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginEnd="50dp"
+                    android:text="* enter ten digits number (excluding country code)"
+                    android:textSize="12dp"
+                    android:textColor="@color/teal_shade"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -129,7 +148,6 @@
                     android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginBottom="20dp"
                     android:layout_marginStart="50dp"
                     android:layout_marginEnd="50dp"
                     android:hint="Password"
@@ -138,7 +156,18 @@
                     android:maxLines="1"
                     android:lines="1"
                     android:singleLine="true"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginEnd="50dp"
+                    android:text="* password should satisfy below mentioned perimeters\n -> should contain at least one uppercase alphabet (A-Z)\n -> should contain at least one special character (@, #,...)\n -> should contain at least one number (0-9)"
+                    android:textSize="12dp"
+                    android:textColor="@color/teal_shade"/>
                 <EditText
+                    android:id="@+id/password_verify"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginStart="50dp"
@@ -149,6 +178,15 @@
                     android:maxLines="1"
                     android:lines="1"
                     android:singleLine="true"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginEnd="50dp"
+                    android:text="* both the password entries should match"
+                    android:textSize="12dp"
+                    android:textColor="@color/teal_shade"/>
                 <Button
                     android:id="@+id/new_signup"
                     android:layout_width="match_parent"

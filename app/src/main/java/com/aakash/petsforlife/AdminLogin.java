@@ -7,15 +7,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class AdminLogin extends AppCompatActivity {
 
-    List<Add> list = new ArrayList<>();
+    List<Entity> list = new ArrayList<>();
 
     EditText username, password;
     Button login;
@@ -46,8 +49,19 @@ public class AdminLogin extends AppCompatActivity {
                 if(dbHelperClass.matchAdmin(username.getText().toString(), password.getText().toString())){
                     Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
                     startActivity(intent);
+                    finish();
                 } else {
-                    Toast.makeText(getApplicationContext(), "Incorrect user or password", Toast.LENGTH_SHORT).show();
+                    LinearLayout parentLayout = findViewById(R.id.parentLayout);
+                    Snackbar snackbar = Snackbar.make(parentLayout, "Incorrect details!", Snackbar.LENGTH_INDEFINITE);
+                    snackbar.setAction("Ok", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            snackbar.dismiss();
+                        }
+                    });
+                    snackbar.setBackgroundTint(getResources().getColor(R.color.black_shade_1));
+                    snackbar.setTextColor(getResources().getColor(R.color.grey_shade));
+                    snackbar.show();
                 }
             }
         });

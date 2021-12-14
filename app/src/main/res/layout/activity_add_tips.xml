@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddTipsActivity"
+    android:id="@+id/parentLayout"
+    android:background="@color/black_shade_2">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:padding="15dp"
+        android:text="Create a new post"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/translucent_black_shade_1"
+        android:background="@color/teal_shade"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="start"
+            android:text="Title (Max 40 chars allowed)"
+            android:textColor="@color/teal_shade"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/postTitle"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="text"
+            android:maxLines="1"
+            android:maxLength="40"
+            android:lines="1"
+            android:singleLine="true"
+            android:background="@drawable/rounded_edit_text_field"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="start"
+            android:text="Description (Max 255 chars allowed)"
+            android:textColor="@color/teal_shade"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/postDesc"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:maxLines="5"
+            android:lines="5"
+            android:maxLength="255"
+            android:background="@drawable/rounded_edit_text_field"/>
+
+        <Button
+            android:id="@+id/addPost"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_primary_button"
+            android:text="ADD"
+            android:textSize="15dp"/>
+    </LinearLayout>
+</LinearLayout>

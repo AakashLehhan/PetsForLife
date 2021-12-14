@@ -19,7 +19,7 @@ public class UserViewPagerAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position) {
             case 0: {
-                return AdminDashboard.newInstance("First Fragment", position);
+                return UserHomeFragment.newInstance();
             }
             case 1: {
                 return TrackerFragment.newInstance();
@@ -28,13 +28,16 @@ public class UserViewPagerAdapter extends FragmentStateAdapter {
                 return UserOwnsFragment.newInstance();
             }
             case 3: {
-                return UserProfileFragment.newInstance();
+                return UserVetAppointmentFragment.newInstance();
             }
             case 4: {
+                return UserProfileFragment.newInstance();
+            }
+            case 5: {
                 return FragmentLogout.newInstance();
             }
             default: {
-                return AdminDashboard.newInstance("First Fragment", 0);
+                return UserHomeFragment.newInstance();
             }
         }
     }

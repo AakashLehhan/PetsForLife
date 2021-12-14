@@ -13,9 +13,9 @@ import com.google.android.material.tabs.TabLayoutMediator;
 public class UserActivity extends AppCompatActivity {
 
     private UserViewPagerAdapter userViewPagerAdapter;
-    private static final int NUM_TABS = 5;
+    private static final int NUM_TABS = 6;
 
-    private final Integer[] icons = new Integer[]{R.drawable.ic_baseline_pets_24, R.drawable.ic_baseline_search_24, R.drawable.ic_baseline_list_24, R.drawable.ic_baseline_account_circle_24, R.drawable.ic_baseline_exit_to_app_24};
+    private final Integer[] icons = new Integer[]{R.drawable.ic_baseline_home_24, R.drawable.ic_baseline_search_24, R.drawable.ic_baseline_pets_24, R.drawable.ic_baseline_call_24, R.drawable.ic_baseline_account_circle_24, R.drawable.ic_baseline_exit_to_app_24};
     TabLayout tabLayout;
     ViewPager2 viewPager2;
 
@@ -41,7 +41,7 @@ public class UserActivity extends AppCompatActivity {
         if(viewPager2.getCurrentItem() == 0) {
             super.onBackPressed();
         } else {
-            viewPager2.setCurrentItem(viewPager2.getCurrentItem() - 1);
+            viewPager2.setCurrentItem(0);
         }
     }
 }

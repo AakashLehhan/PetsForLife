@@ -12,11 +12,13 @@ import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
+import java.util.Objects;
+
 public class AdminActivity extends AppCompatActivity {
-    private static final int NUM_TABS = 5;
+    private static final int NUM_TABS = 6;
 
     private AdminViewPagerAdapter adminViewPagerAdapter;
-    private final Integer[] icons = new Integer[]{R.drawable.ic_baseline_home_24, R.drawable.ic_baseline_search_24, R.drawable.ic_baseline_pets_24, R.drawable.ic_baseline_list_24, R.drawable.ic_baseline_exit_to_app_24};
+    private final Integer[] icons = new Integer[]{R.drawable.ic_baseline_home_24, R.drawable.ic_baseline_search_24, R.drawable.ic_baseline_pets_24, R.drawable.ic_baseline_supervisor_account_24, R.drawable.ic_baseline_medical_services_24, R.drawable.ic_baseline_exit_to_app_24};
     TabLayout tabLayout;
     ViewPager2 viewPager2;
 
@@ -37,12 +39,16 @@ public class AdminActivity extends AppCompatActivity {
         new TabLayoutMediator(tabLayout, viewPager2, (tab, position) -> tab.setIcon(icons[position])).attach();
     }
 
+    public void switchTab(int position) {
+        Objects.requireNonNull(tabLayout.getTabAt(position)).select();
+    }
+
     @Override
     public void onBackPressed() {
         if(viewPager2.getCurrentItem() == 0) {
             super.onBackPressed();
         } else {
-            viewPager2.setCurrentItem(viewPager2.getCurrentItem() - 1);
+            viewPager2.setCurrentItem(0);
         }
     }
 }

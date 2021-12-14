@@ -32,6 +32,9 @@
             <com.google.android.material.tabs.TabLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                app:tabIndicatorGravity="top"
+                app:tabIndicatorAnimationMode="elastic"
+                app:tabIndicatorHeight="5dp"
                 android:id="@+id/tabLayout"/>
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"

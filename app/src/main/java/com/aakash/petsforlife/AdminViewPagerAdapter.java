@@ -3,9 +3,6 @@ package com.aakash.petsforlife;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 public class AdminViewPagerAdapter extends FragmentStateAdapter {
@@ -28,12 +25,15 @@ public class AdminViewPagerAdapter extends FragmentStateAdapter {
                 return TrackerFragment.newInstance();
             }
             case 2: {
-                return AdminDashboard.newInstance("Second Fragment", position);
+                return AdminManagePetsFragment.newInstance();
             }
             case 3: {
-                return AdminDashboard.newInstance("Third Fragment", position);
+                return AdminManageUsersFragment.newInstance();
             }
             case 4: {
+                return AdminManageMedicalServicesFragment.newInstance();
+            }
+            case 5: {
                 return FragmentLogout.newInstance();
             }
             default: {

@@ -1,5 +1,6 @@
 package com.aakash.petsforlife;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.tabs.TabLayout;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -50,9 +54,42 @@ public class AdminDashboard extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_admin_dashboard, container, false);
-        //view.setBackgroundColor(colors[mParam2]);
-        TextView debug = (TextView) view.findViewById(R.id.testing);
-        debug.setText(mParam1);
+
+        TextView switchOne = (TextView) view.findViewById(R.id.view_pets);
+        switchOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TabLayout tabLayout = getActivity().findViewById(R.id.tabLayout);
+                tabLayout.getTabAt(2).select();
+            }
+        });
+
+        TextView switchTwo = (TextView) view.findViewById(R.id.view_users);
+        switchTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TabLayout tabLayout = getActivity().findViewById(R.id.tabLayout);
+                tabLayout.getTabAt(3).select();
+            }
+        });
+
+        TextView switchThree = (TextView) view.findViewById(R.id.view_vets);
+        switchThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TabLayout tabLayout = getActivity().findViewById(R.id.tabLayout);
+                tabLayout.getTabAt(4).select();
+            }
+        });
+
+        FloatingActionButton addPostButton = (FloatingActionButton) view.findViewById(R.id.addPostButton);
+        addPostButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AddTipsActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }
