@@ -1,9 +1,16 @@
 package com.aakash.petsforlife;
 
 public class Entity {
-    String name, username, password, email, animalName, animalType, animalToken, animalDesc, animalDOB;
+    String name, username, password, email, animalName, animalType, animalToken, animalDesc, animalDOB, postTitle, postDescription;
     int pin;
     long contact;
+
+    public Entity() {}
+
+    public Entity(String postTitle, String postDescription) {
+        this.postDescription = postDescription;
+        this.postTitle = postTitle;
+    }
 
     public Entity(String name, String username, int pin, String password){
         this.name = name;
@@ -18,6 +25,14 @@ public class Entity {
         this.email = email;
         this.contact = contact;
         this.password = password;
+    }
+
+    public Entity(String animalName, String animalType, String animalToken, String animalDesc, String animalDOB) {
+        this.animalName = animalName;
+        this.animalDesc = animalDesc;
+        this.animalType = animalType;
+        this.animalToken = animalToken;
+        this.animalDOB = animalDOB;
     }
 
     public Entity(String animalName, String username, String animalType, String animalToken, String animalDesc, String animalDOB) {
@@ -73,6 +88,14 @@ public class Entity {
         return animalType;
     }
 
+    public String getPostTitle() {
+        return postTitle;
+    }
+
+    public String getPostDescription() {
+        return postDescription;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -119,5 +142,13 @@ public class Entity {
 
     public void setAnimalType(String animalType) {
         this.animalType = animalType;
+    }
+
+    public void setPostDescription(String postDescription) {
+        this.postDescription = postDescription;
+    }
+
+    public void setPostTitle(String postTitle) {
+        this.postTitle = postTitle;
     }
 }

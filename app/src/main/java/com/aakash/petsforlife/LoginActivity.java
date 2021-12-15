@@ -45,8 +45,11 @@ public class LoginActivity extends AppCompatActivity {
                         editor.putString("SAVED_PASSWORD", password.getText().toString());
                         editor.apply();
                     }
+
                     Intent intent = new Intent(getApplicationContext(), UserActivity.class);
+                    intent.putExtra("username", username.getText().toString());
                     startActivity(intent);
+
                     finish();
                 } else {
                     LinearLayout parentLayout = findViewById(R.id.parentLayout);

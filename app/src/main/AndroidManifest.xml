@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PetsForLife">
         <activity
+            android:name=".AddPetsActivity"
+            android:exported="true" />
+        <activity
             android:name=".AddTipsActivity"
             android:exported="true" />
         <activity

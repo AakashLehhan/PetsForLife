@@ -153,6 +153,27 @@ public class DBHelperClass extends SQLiteOpenHelper {
         return true;
     }
 
+    public Entity getUserDetails(String username) {
+        Entity entity = new Entity();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] selectionArgs = {username};
+        Cursor cursor = db.rawQuery("SELECT * FROM users WHERE username = ?", selectionArgs);
+
+        if(cursor.moveToFirst()){
+            do {
+                entity.setName(cursor.getString(1));
+                entity.setUsername(cursor.getString(2));
+                entity.setEmail(cursor.getString(3));
+                entity.setContact(Long.parseLong(cursor.getString(4)));
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+
+        return entity;
+    }
+
     public boolean matchUser(String username, String password) {
         boolean exists = false;
 
@@ -199,6 +220,62 @@ public class DBHelperClass extends SQLiteOpenHelper {
         db.close();
 
         return exists;
+    }
+
+    public boolean addPet(String ownerName, String petName, String petToken, String petType, String petDOB, String petDescription) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("animal_name", petName);
+        contentValues.put("animal_type", petType);
+        contentValues.put("animal_dob", petDOB);
+        contentValues.put("animal_desc", petDescription);
+        contentValues.put("animal_token", petToken);
+        db.insert(ownerName, null, contentValues);
+
+        contentValues.put("owner_name", ownerName);
+        db.insert("pets", null, contentValues);
+
+        db.close();
+        return true;
+    }
+
+    public boolean validatePet(String token) {
+        boolean exists = false;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM pets WHERE animal_token = ?", new String[]{token});
+
+        if(cursor.moveToFirst()) {
+            do {
+                exists = true;
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+        return exists;
+    }
+
+    public List<Entity> getAllUserPets(String username){
+        List<Entity> list = new ArrayList<Entity>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + username, null);
+
+        if(cursor.moveToFirst()) {
+            do {
+                Entity entity = new Entity(cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3),
+                        cursor.getString(4),
+                        cursor.getString(5));
+                list.add(entity);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+        return list;
     }
 
     public List<Entity> getAllPets(){
@@ -256,5 +333,24 @@ public class DBHelperClass extends SQLiteOpenHelper {
         db.insert("tips", null, contentValues);
         db.close();
         return true;
+    }
+
+    public List<Entity> getAllPosts() {
+        List<Entity> list = new ArrayList<Entity>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM tips", null);
+
+        if(cursor.moveToFirst()) {
+            do {
+                Entity entity = new Entity(cursor.getString(1), cursor.getString(2));
+                list.add(entity);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return list;
     }
 }

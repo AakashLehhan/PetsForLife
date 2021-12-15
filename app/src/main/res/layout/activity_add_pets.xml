@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddPetsActivity"
+    android:id="@+id/parentLayout"
+    android:background="@color/black_shade_2">
+
+    <TextView
+        android:id="@+id/secondaryTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:padding="20dp"
+        android:background="@color/teal_shade"
+        android:textColor="@color/black_shade_2"
+        android:text="Enter complete details of your pet"
+        android:textStyle="bold"
+        android:textSize="18dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/secondaryTitle"
+        android:layout_centerVertical="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/petName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="20dp"
+                android:hint="Pet Name"
+                android:inputType="text"
+                android:background="@drawable/rounded_edit_text_field"
+                android:maxLines="1"
+                android:lines="1"
+                android:singleLine="true"/>
+            <EditText
+                android:id="@+id/petToken"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:hint="Pet Token"
+                android:inputType="text"
+                android:background="@drawable/rounded_edit_text_field"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:lines="1"
+                android:singleLine="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:text="* this must be unique &amp; must start from TOK..."
+                android:textSize="12dp"
+                android:textColor="@color/teal_shade"/>
+            <EditText
+                android:id="@+id/petType"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:hint="Pet Type"
+                android:inputType="text"
+                android:background="@drawable/rounded_edit_text_field"
+                android:maxLines="1"
+                android:lines="1"
+                android:singleLine="true"/>
+            <EditText
+                android:id="@+id/petDOB"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:hint="Pet DOB"
+                android:background="@drawable/rounded_edit_text_field"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:lines="1"
+                android:singleLine="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:text="* please use '-' or '/' as separators"
+                android:textSize="12dp"
+                android:textColor="@color/teal_shade"/>
+            <EditText
+                android:id="@+id/petDesc"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:hint="Pet Description"
+                android:background="@drawable/rounded_edit_text_field"
+                android:maxLength="255"
+                android:maxLines="5"
+                android:lines="5"
+                android:singleLine="false"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:text="* Mention a few memorable details of your pet"
+                android:textSize="12dp"
+                android:textColor="@color/teal_shade"/>
+            <Button
+                android:id="@+id/addNewPet"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:background="@drawable/rounded_primary_button"
+                android:text="Add"
+                android:textSize="15dp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

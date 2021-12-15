@@ -5,25 +5,55 @@
     android:layout_height="match_parent"
     tools:context=".FragmentLogout">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:id="@+id/logout">
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/ic_baseline_exit_to_app_24"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Click here to logout &amp; exit"
-            android:textStyle="italic"
-            android:textSize="18dp"
-            android:textColor="@color/black_shade_1"
-            android:paddingTop="20dp"/>
-    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_shade_1">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_above="@id/logout"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/logo"/>
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="30dp"
+                android:gravity="center"
+                android:textColor="@color/grey_shade"
+                android:text="Pets For Life is an application designed with the mindset of reducing stray animals. Using this one can register themselves and their pets. If you find any stray animal then you can register that animal here."
+                android:textSize="20dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:id="@+id/logout"
+            android:background="@color/grey_shade">
+            <ImageView
+                android:paddingTop="20dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_baseline_exit_to_app_24"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Click here to logout &amp; exit"
+                android:textStyle="italic"
+                android:textSize="18dp"
+                android:textColor="@color/teal_shade"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"/>
+        </LinearLayout>
+    </RelativeLayout>
 </FrameLayout>

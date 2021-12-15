@@ -2,6 +2,7 @@ package com.aakash.petsforlife;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,11 @@ public class AddTipsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_tips);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("USER_SHARED_PREFERENCES", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("CURR_TAB", 0);
+        editor.apply();
 
         title = findViewById(R.id.postTitle);
         description = findViewById(R.id.postDesc);

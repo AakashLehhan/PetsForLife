@@ -11,6 +11,7 @@
         <entry key="app/src/main/res/drawable/rounded_top_corners.xml" value="0.2296875" />
         <entry key="app/src/main/res/drawable/tab_icon_color_selector.xml" value="0.2296875" />
         <entry key="app/src/main/res/drawable/universal_gradient_bg.xml" value="0.2296875" />
+        <entry key="app/src/main/res/layout/activity_add_pets.xml" value="0.21354166666666666" />
         <entry key="app/src/main/res/layout/activity_add_tips.xml" value="0.21354166666666666" />
         <entry key="app/src/main/res/layout/activity_admin.xml" value="0.21354166666666666" />
         <entry key="app/src/main/res/layout/activity_admin_login.xml" value="0.21354166666666666" />
@@ -32,11 +33,12 @@
         <entry key="app/src/main/res/layout/fragment_tracker.xml" value="0.21354166666666666" />
         <entry key="app/src/main/res/layout/fragment_user_home.xml" value="0.21025641025641026" />
         <entry key="app/src/main/res/layout/fragment_user_owns.xml" value="0.1984375" />
-        <entry key="app/src/main/res/layout/fragment_user_profile.xml" value="0.21354166666666666" />
+        <entry key="app/src/main/res/layout/fragment_user_profile.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_user_vet_appointment.xml" value="0.21354166666666666" />
         <entry key="app/src/main/res/layout/global_title_bar.xml" value="0.21354166666666666" />
         <entry key="app/src/main/res/layout/tip_card.xml" value="0.33" />
         <entry key="app/src/main/res/layout/user_card.xml" value="0.19444444444444445" />
+        <entry key="app/src/main/res/layout/user_pets_card.xml" value="0.25" />
         <entry key="app/src/main/res/menu/admin_tab_layout.xml" value="0.21354166666666666" />
       </map>
     </option>

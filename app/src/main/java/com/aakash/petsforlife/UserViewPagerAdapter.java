@@ -8,10 +8,12 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 public class UserViewPagerAdapter extends FragmentStateAdapter {
 
     private int NUM_TABS;
+    private String curr_user;
 
-    public UserViewPagerAdapter(@NonNull FragmentActivity fragmentActivity, int NUM_TABS) {
+    public UserViewPagerAdapter(@NonNull FragmentActivity fragmentActivity, int NUM_TABS, String curr_user) {
         super(fragmentActivity);
         this.NUM_TABS = NUM_TABS;
+        this.curr_user = curr_user;
     }
 
     @NonNull
@@ -19,25 +21,25 @@ public class UserViewPagerAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position) {
             case 0: {
-                return UserHomeFragment.newInstance();
+                return UserHomeFragment.newInstance(curr_user);
             }
             case 1: {
-                return TrackerFragment.newInstance();
+                return TrackerFragment.newInstance(/*curr_user*/);
             }
             case 2: {
-                return UserOwnsFragment.newInstance();
+                return UserOwnsFragment.newInstance(curr_user);
             }
             case 3: {
-                return UserVetAppointmentFragment.newInstance();
+                return UserVetAppointmentFragment.newInstance(/*curr_user*/);
             }
             case 4: {
-                return UserProfileFragment.newInstance();
+                return UserProfileFragment.newInstance(curr_user);
             }
             case 5: {
                 return FragmentLogout.newInstance();
             }
             default: {
-                return UserHomeFragment.newInstance();
+                return UserHomeFragment.newInstance(curr_user);
             }
         }
     }

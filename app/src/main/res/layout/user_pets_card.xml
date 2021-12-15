@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:layout_margin="20dp">
+
+    <RelativeLayout
+        android:id="@+id/child_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/petProfileImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/ic_baseline_pets_24" />
+
+        <View
+            android:id="@+id/view_2"
+            android:layout_width="1px"
+            android:layout_height="100dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/petProfileImage"
+            android:background="@color/teal_shade" />
+
+        <TextView
+            android:id="@+id/petName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@id/petProfileImage"
+            android:text="Animal Name"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black_shade_1"/>
+
+        <TextView
+            android:id="@+id/petToken"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@id/petProfileImage"
+            android:layout_below="@id/petName"
+            android:text="Pet Token"
+            android:textSize="15dp"
+            android:textColor="@color/black_shade_2"/>
+
+        <TextView
+            android:id="@+id/petType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@id/petProfileImage"
+            android:layout_below="@id/petToken"
+            android:text="Pet Type"
+            android:textSize="15dp"
+            android:textColor="@color/black_shade_2"/>
+
+        <TextView
+            android:id="@+id/petDOB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/petType"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@id/petProfileImage"
+            android:text="Pet DOB"
+            android:textColor="@color/black_shade_2"
+            android:textSize="15dp" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view_1"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/teal_shade"
+        android:layout_below="@id/child_1"/>
+
+    <TextView
+        android:id="@+id/petDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_below="@id/view_1"
+        android:text="Pet Description"
+        android:textSize="18dp"
+        android:textColor="@color/black_shade_2"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/teal_shade"
+        android:layout_below="@id/petDesc"/>
+</RelativeLayout>
